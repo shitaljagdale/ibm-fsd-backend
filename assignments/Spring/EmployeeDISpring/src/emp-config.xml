@@ -1,0 +1,45 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <!-- Add a logger config to see logging messages. - For more detailed logs, set values to "FINEST" - For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html -->
+     <bean init-method="initLogger" class="com.ibm.spring.core.employee.MyLoggerConfig" id="MyLoggerConfig">
+           <property value="FINE" name="rootLoggerLevel"/>
+            <property value="FINE" name="printedLoggerLevel"/>
+     </bean>
+     
+
+    <bean id="employee" class="com.ibm.spring.core.employee.Employee" >
+    
+        <constructor-arg name="id" value="101" ></constructor-arg>
+        <constructor-arg name="name" value="Geeta"></constructor-arg>	
+        <constructor-arg name="address" ref="address"></constructor-arg>	
+	  
+	   <property name="age" value="23"></property>
+	   <property name="designation" value="Devloper"></property>
+	   	<property name="salary" value="34000"></property>
+	    <property name="skills" >
+	        <list>
+	        <value>Skill1</value>
+	        <value>Skill2</value>
+	        <value>Skill3</value>
+	        <value>Skill4</value>
+	        </list>
+	   </property>
+	   <property name="fulltime" value="true"></property>
+	  <property name="dob" ref="date">
+           
+        </property>
+	  
+	</bean>
+	<bean id="date" class="java.time.LocalDate" factory-method="parse">
+        <constructor-arg index="0" value="1986-08-12" />
+    </bean>
+	
+	<bean id="address" class="com.ibm.spring.core.employee.Address">
+	<property name="city" value="Latur"></property>
+	<property name="country" value="India"></property>
+	<property name="pin" value="413527"></property>
+	</bean>
+	</beans>

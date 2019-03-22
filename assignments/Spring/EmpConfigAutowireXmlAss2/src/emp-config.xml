@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+   <!-- Add a logger config to see logging messages. - For more detailed logs, set values to "FINEST" - For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html -->
+     <context:annotation-config/>
+   <context:component-scan base-package="com.ibm.core.employee.xmlconfig"/>
+   
+     <bean id="employee" class="com.ibm.core.employee.xmlconfig.Employee" autowire="byName">
+     <property name="id" value="123"></property>
+      <property name="name" value="meenu"></property>
+       <property name="age" value="23"></property>
+        <property name="designation" value="devloper"></property>
+         <property name="salary" value="300000"></property>
+         <property name="skills">
+         <list>
+         <value>skill1</value>
+         <value>skill2</value>
+         <value>skill3</value>
+         </list>
+         </property>
+     </bean> 
+       <bean id="address" class="com.ibm.core.employee.xmlconfig.Address">
+     
+     </bean> 
+	
+	<bean id="date" class="java.time.LocalDate" factory-method="parse">
+        <constructor-arg index="0" value="1986-08-12" />
+    </bean>
+	
+	
+	</beans>

@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+  <!--if one .xml file is dependent on another then we can import it from another  
+  <import resource="bean-config.xml"/> -->
+   
+    <!-- Add a logger config to see logging messages. - For more detailed logs, set values to "FINEST" - For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html -->
+     <bean init-method="initLogger" class="com.ibm.logger.MyLoggerConfig" id="MyLoggerConfig">
+           <property value="FINE" name="rootLoggerLevel"/>
+            <property value="FINE" name="printedLoggerLevel"/>
+     </bean>
+   
+   <bean id="empservice" class="com.ibm.service.EmployeeServiceImpl">
+    <property name="dao" ref="empdao"></property>
+    </bean>
+    
+    <bean id="empdao" class="com.ibm.dao.EmployeeDaoImpl">
+    </bean>
+    
+    <bean id="employee" class="com.ibm.model.Employee">
+    <property name="id" value="111"></property>
+    <property name="name" value="manu"></property>
+    <property name="age" value="22"></property>
+    <property name="designation" value="manager"></property>
+    <property name="department" value="CO"></property>
+    <property name="salary" value="39999"></property>
+    </bean>
+    
+     <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+  
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/employeeapp" />
+        <property name="username" value="root" />
+        <property name="password" value="" />
+    </bean>
+    
+    </beans>

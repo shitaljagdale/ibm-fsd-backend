@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Registeration page !!</h1>
+	<form action="register.do">
+		<p>UserName:<input type="text" name="username"></p>
+		<p>Password:<input type="text" name="password"></p>
+		<p>Department:<input type="text" name="department"></p>
+		<p>Designation:<input type="text" name="designation"></p>
+		<p>Salary:<input type="number" name="salary"></p>
+		Male<input type="radio" name="gender" value="male" />
+		Female<input type="radio" name="gender" value="female" />
+		
+		<p>
+		Country: <select name="userCountry">
+			<option>India</option>
+			<option>Pakistan</option>
+			<option>other</option>
+		</select> 
+		</p>
+		<br/>
+		Skills:
+		<br/>
+		<input type="checkbox" name="skill1" value="JAVA"> JAVA<br>
+		<input type="checkbox" name="skill2" value="JSP">JSP <br>
+		<input type="checkbox" name="skill3" value="SERVLET"> SERVLET<br>
+		<br>
+		DOB<input type="datetime" name="date">
+		
+
+		<button type="submit" value="Submit">Register</button>
+		<button type="reset" value="Reset">Reset</button>
+	</form>
+</body>
+</html>

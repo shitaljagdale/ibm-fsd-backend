@@ -1,0 +1,3 @@
+com\examples\spring\boot\core\profile\service\DbConnectionConfig.class
+com\examples\spring\boot\core\profile\ProfileApplicationMain.class
+com\examples\spring\boot\core\profile\service\HealthCheckService.class

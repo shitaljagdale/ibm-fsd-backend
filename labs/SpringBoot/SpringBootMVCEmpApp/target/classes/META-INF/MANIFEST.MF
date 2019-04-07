@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringBootMVCEmpApp
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ShitalBJadhav
+Implementation-Vendor-Id: com.examples.spring.web.mvc
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/SpringBootMVCEmpApp
+Created-By: Maven Integration for Eclipse
+
